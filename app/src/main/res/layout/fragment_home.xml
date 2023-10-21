@@ -67,7 +67,22 @@
         android:textColor="?attr/colorOnSecondaryContainer"
         app:layout_constraintBottom_toTopOf="@+id/progressBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:drawableLeft="@drawable/baseline_play_arrow_24"
+        android:onClick="resetCount"
+        />
 
-
+    <Button
+        android:id="@+id/button"
+        android:layout_width="240dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="48dp"
+        android:backgroundTint="@color/material_dynamic_primary70"
+        android:text="@string/count"
+        android:textColor="#2B2828"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        android:onClick="countUp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

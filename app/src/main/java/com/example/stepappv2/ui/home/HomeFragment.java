@@ -19,6 +19,7 @@ public class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
     private TextView stepCountsView;
     private CircularProgressIndicator progressBar;
+    private int counter = 0;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -28,13 +29,27 @@ public class HomeFragment extends Fragment {
         View root = binding.getRoot();
 
         stepCountsView = (TextView) root.findViewById(R.id.counter);
-        stepCountsView.setText("1000");
+        stepCountsView.setText(Integer.toString(counter));
 
         progressBar = (CircularProgressIndicator) root.findViewById(R.id.progressBar);
         progressBar.setMax(6000);
-        progressBar.setProgress(1000);
+        progressBar.setProgress(counter);
 
         return root;
+    }
+
+    public void countUp(View view) {
+
+        counter++;
+        stepCountsView.setText(Integer.toString(counter));
+        progressBar.setProgress(counter);
+    }
+
+    public void resetCount(View view) {
+
+        counter = 0;
+        stepCountsView.setText(Integer.toString(counter));
+        progressBar.setProgress(counter);
     }
 
     @Override
